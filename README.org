@@ -1,6 +1,7 @@
 * html-to-epub
 
-Convert HTML files to EPUB format.
+Convert HTML files to EPUB format. HTML files should preferably be downloaded using the [[https://github.com/gildas-lormeau/SingleFileZ][SingleFileZ
+browser extension.]]
 
 ** Usage
 
