@@ -1,0 +1,23 @@
+* html-to-epub
+
+Convert HTML files to EPUB format.
+
+** Usage
+
+*** Single file
+
+#+begin_src bash
+./html-to-epub.sh input.html output.epub
+#+end_src
+
+*** Batch conversion
+
+#+begin_src bash
+./batch-html-to-epub.sh output-directory file1.html file2.html file3.html
+#+end_src
+
+*** Batch with fdfind
+
+#+begin_src bash
+fdfind '.html$' /path/to/html/files | xargs ./batch-html-to-epub.sh /path/to/output
+#+end_src
