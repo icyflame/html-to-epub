@@ -54,10 +54,22 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
 			}
 		});
 	}
+
+    let byline_sanitized = '';
+    if (article.byline !== null) {
+        byline_sanitized = article.byline.replace("\n", " ");
+        byline_sanitized = byline_sanitized.replace("&", "and");
+    }
+    let description_sanitized = '';
+    if (article.excerpt !== null) {
+        description_sanitized = article.excerpt.replace("\n", " ");
+        description_sanitized = article.excerpt.replace("&", "and");
+    }
+
 	const metadata = `<dc:title>${article.title}</dc:title>
 <dc:publisher>${article.siteName}</dc:publisher>
-<dc:creator>${article.byline}</dc:creator>
-<dc:description>${article.excerpt}</dc:description>
+<dc:creator>${byline_sanitized}</dc:creator>
+<dc:description>${description_sanitized}</dc:description>
 <dc:language>${article.lang}</dc:language>`;
 
 	if(debug) console.log(require('util').inspect(article));
